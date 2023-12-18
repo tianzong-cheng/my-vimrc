@@ -80,6 +80,13 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 " coc.nvim Settings
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
+" vim-gitgutter Settings
+set updatetime=100
+
+" vim-airline Settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plug.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,6 +100,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'joshdick/onedark.vim'
+
+Plug 'vim-airline/vim-airline'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
 call plug#end()
 
